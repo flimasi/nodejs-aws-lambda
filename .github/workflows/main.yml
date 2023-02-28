@@ -19,3 +19,10 @@ jobs:
           CI: true
         run: |
           npm ci
+        - name: deploy
+          run: |
+            npx ncc build index.ts
+            zip -j deploy.zip ./dist/*
+
+
+
